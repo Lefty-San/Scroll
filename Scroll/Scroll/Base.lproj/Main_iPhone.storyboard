@@ -29,8 +29,8 @@
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="Nv9-ag-cx9" id="dhA-cH-Pdo"/>
-                            <outlet property="delegate" destination="Nv9-ag-cx9" id="o8e-e4-a5K"/>
+                            <outlet property="dataSource" destination="Nv9-ag-cx9" id="shb-SU-oU5"/>
+                            <outlet property="delegate" destination="Nv9-ag-cx9" id="O2X-f9-h5z"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>

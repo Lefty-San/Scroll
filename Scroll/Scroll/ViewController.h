@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PhotoAlbumLayout.h"
 
-@interface ViewController : UICollectionViewController
+@interface ViewController : UICollectionViewController <UICollectionViewDataSource,
+UICollectionViewDelegate>
 
 
 @end
