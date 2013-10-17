@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PhotoAlbumLayout.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UICollectionViewController
 
-@property (weak, nonatomic) IBOutlet UICollectionView *CollectionConnection;
 
 @end
