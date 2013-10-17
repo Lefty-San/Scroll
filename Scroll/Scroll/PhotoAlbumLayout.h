@@ -15,5 +15,6 @@
 @property (nonatomic) CGSize itemSize;
 @property (nonatomic) CGFloat interItemSpacingY;
 @property (nonatomic) NSInteger numberOfColumns;
+@property (nonatomic) CGFloat titleHeight;
 
 @end

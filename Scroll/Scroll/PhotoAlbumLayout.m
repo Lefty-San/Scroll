@@ -12,6 +12,7 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
 
 @interface PhotoAlbumLayout ()
 
+/***** Private declarations *****/
 @property (nonatomic, strong) NSDictionary *layoutInfo;
 
 - (CGRect)frameForAlbumPhotoAtIndexPath:(NSIndexPath *)indexPath;
@@ -24,7 +25,7 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
 
 @implementation PhotoAlbumLayout
 
-- (id)init {
+-(id)init {
     self = [super init];
     if (self) {
         [self setup];
@@ -33,7 +34,7 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+-(id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {
         [self setup];
@@ -42,7 +43,9 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     return self;
 }
 
-- (void)setup {
+
+/******* Setup *******/
+-(void)setup {
     self.itemInsets = UIEdgeInsetsMake(22.0f, 22.0f, 13.0f, 22.0f);
     self.itemSize = CGSizeMake(125.0f, 125.0f);
     self.interItemSpacingY = 12.0f;
@@ -73,44 +76,49 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
         
         self.layoutInfo = newLayoutInfo;
     }
+}
 
-- (CGRect)frameForAlbumPhotoAtIndexPath:(NSIndexPath *)indexPath
-    {
-        NSInteger row = indexPath.section / self.numberOfColumns;
-        NSInteger column = indexPath.section % self.numberOfColumns;
-
-        CGFloat spacingX = self.collectionView.bounds.size.width -
-        self.itemInsets.left -
-        self.itemInsets.right -
-        (self.numberOfColumns * self.itemSize.width);
-
-        if (self.numberOfColumns > 1) spacingX = spacingX / (self.numberOfColumns - 1);
-
-        CGFloat originX = floorf(self.itemInsets.left + (self.itemSize.width + spacingX) * column);
-
-        CGFloat originY = floor(self.itemInsets.top +
-                                (self.itemSize.height + self.interItemSpacingY) * row);
-
-        return CGRectMake(originX, originY, self.itemSize.width, self.itemSize.height);
-    }
+-(CGRect)frameForAlbumPhotoAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.section / self.numberOfColumns;
+    NSInteger column = indexPath.section % self.numberOfColumns;
+        
+    CGFloat spacingX = self.collectionView.bounds.size.width -
+    self.itemInsets.left -
+    self.itemInsets.right -
+    (self.numberOfColumns * self.itemSize.width);
+        
+    if (self.numberOfColumns > 1) spacingX = spacingX / (self.numberOfColumns - 1);
+        
+    CGFloat originX = floorf(self.itemInsets.left + (self.itemSize.width + spacingX) * column);
+        
+    CGFloat originY = floor(self.itemInsets.top +
+                            (self.itemSize.height + self.titleHeight + self.interItemSpacingY) * row);
+        
+    return CGRectMake(originX, originY, self.itemSize.width, self.itemSize.height);
+}
     
-- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
-    {
-        NSMutableArray *allAttributes = [NSMutableArray arrayWithCapacity:self.layoutInfo.count];
+-(NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
+    NSMutableArray *allAttributes = [NSMutableArray arrayWithCapacity:self.layoutInfo.count];
         
-        [self.layoutInfo enumerateKeysAndObjectsUsingBlock:^(NSString *elementIdentifier,
-                                                             NSDictionary *elementsInfo,
-                                                             BOOL *stop) {
-            [elementsInfo enumerateKeysAndObjectsUsingBlock:^(NSIndexPath *indexPath,
-                                                              UICollectionViewLayoutAttributes *attributes,
-                                                              BOOL *innerStop) {
-                if (CGRectIntersectsRect(rect, attributes.frame)) {
-                    [allAttributes addObject:attributes];
-                }
-            }];
+    [self.layoutInfo enumerateKeysAndObjectsUsingBlock:^(NSString *elementIdentifier,
+                                                            NSDictionary *elementsInfo,
+                                                            BOOL *stop) {
+        [elementsInfo enumerateKeysAndObjectsUsingBlock:^(NSIndexPath *indexPath,
+                                                            UICollectionViewLayoutAttributes *attributes,
+                                                            BOOL *innerStop) {
+            if (CGRectIntersectsRect(rect, attributes.frame)) {
+                [allAttributes addObject:attributes];
+            }
         }];
+    }];
         
-        return allAttributes;
-    }
+    return allAttributes;
+}
+
+-(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    return self.layoutInfo[PhotoAlbumLayoutPhotoCellKind][indexPath];
+
+}
 
 @end
