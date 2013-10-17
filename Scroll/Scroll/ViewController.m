@@ -7,19 +7,21 @@
 //
 
 #import "ViewController.h"
+#import "PhotoAlbumLayout.h"
 
 @interface ViewController ()
 
+@property (nonatomic, weak) IBOutlet PhotoAlbumLayout *photoalbumlayout;
+
 @end
 
-//@implementation ViewController
-
-@implementation UICollectionViewController
+@implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+//    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f];
 }
 
 - (void)didReceiveMemoryWarning

@@ -36,7 +36,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="CollectionConnection" destination="clt-Gs-tNt" id="Pbp-fk-MWl"/>
+                        <outlet property="CollectionConnection" destination="clt-Gs-tNt" id="sNa-ey-S5n"/>
+                        <outlet property="photoalbumlayout" destination="gir-cc-8nr" id="nJN-TY-PyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
