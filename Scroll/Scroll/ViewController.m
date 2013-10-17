@@ -21,7 +21,8 @@
 {
     [super viewDidLoad];
 
-    self.collectionView = [UIColor colorWithWhite:0.25f alpha:1.0f];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25f alpha:1.0f];
+    
 }
 
 - (void)didReceiveMemoryWarning
