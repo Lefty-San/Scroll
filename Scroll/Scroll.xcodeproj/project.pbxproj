@@ -23,6 +23,7 @@
 		42712D5D180F3BA70061F5AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42712D5B180F3BA70061F5AC /* InfoPlist.strings */; };
 		42712D5F180F3BA70061F5AC /* ScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42712D5E180F3BA70061F5AC /* ScrollTests.m */; };
 		42712D6A180F3C700061F5AC /* CollectionFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42712D69180F3C700061F5AC /* CollectionFlow.m */; };
+		42AEF17E181030A6001188FE /* PhotoAlbumLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AEF17D181030A6001188FE /* PhotoAlbumLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		42712D5E180F3BA70061F5AC /* ScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollTests.m; sourceTree = "<group>"; };
 		42712D68180F3C700061F5AC /* CollectionFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionFlow.h; sourceTree = "<group>"; };
 		42712D69180F3C700061F5AC /* CollectionFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionFlow.m; sourceTree = "<group>"; };
+		42AEF17C181030A6001188FE /* PhotoAlbumLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumLayout.h; sourceTree = "<group>"; };
+		42AEF17D181030A6001188FE /* PhotoAlbumLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				42712D68180F3C700061F5AC /* CollectionFlow.h */,
 				42712D69180F3C700061F5AC /* CollectionFlow.m */,
 				42712D42180F3BA70061F5AC /* Main_iPhone.storyboard */,
+				42AEF17C181030A6001188FE /* PhotoAlbumLayout.h */,
+				42AEF17D181030A6001188FE /* PhotoAlbumLayout.m */,
 				42712D45180F3BA70061F5AC /* Main_iPad.storyboard */,
 				42712D48180F3BA70061F5AC /* ViewController.h */,
 				42712D49180F3BA70061F5AC /* ViewController.m */,
@@ -261,6 +266,7 @@
 				42712D4A180F3BA70061F5AC /* ViewController.m in Sources */,
 				42712D41180F3BA70061F5AC /* AppDelegate.m in Sources */,
 				42712D3D180F3BA70061F5AC /* main.m in Sources */,
+				42AEF17E181030A6001188FE /* PhotoAlbumLayout.m in Sources */,
 				42712D6A180F3C700061F5AC /* CollectionFlow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +486,7 @@
 				42712D64180F3BA70061F5AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42712D65180F3BA70061F5AC /* Build configuration list for PBXNativeTarget "ScrollTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				42712D67180F3BA70061F5AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
