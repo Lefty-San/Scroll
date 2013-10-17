@@ -15,5 +15,3 @@
 @property (nonatomic, weak) IBOutlet PhotoAlbumLayout *photoalbumlayout;
 
 @end
-
-@implementation UICollectionViewController

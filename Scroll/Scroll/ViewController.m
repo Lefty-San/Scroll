@@ -12,7 +12,9 @@
 
 @end
 
-@implementation ViewController
+//@implementation ViewController
+
+@implementation UICollectionViewController
 
 - (void)viewDidLoad
 {
