@@ -42,6 +42,7 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
 
     [self.collectionView registerClass:[AlbumPhotoCell class]
             forCellWithReuseIdentifier:PhotoCellIdentifier];
+    [self setupRecognizers];
 
 }
 
@@ -56,12 +57,13 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     UIPanGestureRecognizer* panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
     panRecognizer.minimumNumberOfTouches = 1;
     panRecognizer.delegate = self; // Very important
-//    [self addGestureRecognizer:panRecognizer];
+    [panRecognizer addTarget:self.collectionView action:@selector(panGestureRecognizer)];
+    [self.collectionView addGestureRecognizer:panRecognizer];
 
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-{
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer {
+
     NSLog(@"dey be hollerin at me like ay Lil Swipey");
     return YES; // Also, very important.
 }
@@ -78,6 +80,7 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     AlbumPhotoCell *photoCell =
     [collectionView dequeueReusableCellWithReuseIdentifier:PhotoCellIdentifier
                                               forIndexPath:indexPath];
