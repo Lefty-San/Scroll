@@ -35,7 +35,7 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     [super viewDidLoad];
 
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.50f alpha:1.0f];
-    
+
     [self.collectionView registerClass:[AlbumPhotoCell class]
             forCellWithReuseIdentifier:PhotoCellIdentifier];
 
@@ -45,6 +45,22 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setupRecognizers {
+
+    UIPanGestureRecognizer* panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
+    panRecognizer.minimumNumberOfTouches = 1;
+    panRecognizer.delegate = self; // Very important
+//    [self addGestureRecognizer:panRecognizer];
+    
+
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"dey be hollerin at me like ay Lil Swipey");
+    return YES; // Also, very important.
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -65,7 +81,5 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     
     return photoCell;
 }
-
-
 
 @end

@@ -11,6 +11,7 @@
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="hJZ-i6-v69">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
                         <collectionViewLayout key="collectionViewLayout" id="ZAA-RT-f5W" customClass="PhotoAlbumLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ERX-XM-0Va">
@@ -26,6 +27,7 @@
                         <connections>
                             <outlet property="dataSource" destination="Nv9-ag-cx9" id="XOR-QR-k60"/>
                             <outlet property="delegate" destination="Nv9-ag-cx9" id="Jan-fT-OMi"/>
+                            <outletCollection property="gestureRecognizers" destination="skI-pS-U41" appends="YES" id="mdT-u7-aSm"/>
                         </connections>
                     </collectionView>
                     <connections>
@@ -33,6 +35,7 @@
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixm-OF-GKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="skI-pS-U41"/>
             </objects>
             <point key="canvasLocation" x="305" y="-80"/>
         </scene>
