@@ -11,6 +11,8 @@
  *  http://skeuo.com/uicollectionview-custom-layout-tutorial
  *  leaving off on step 32
  *
+ *  http://www.raywenderlich.com/22324/beginning-uicollectionview-in-ios-6-part-12
+ *
  */
 
 
