@@ -8,17 +8,12 @@
         <scene sceneID="Xv9-fg-1bB">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Nv9-ag-cx9" customClass="ViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="EAH-Gs-eQi">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="hJZ-i6-v69">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bw8-KL-gIM">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="ZAA-RT-f5W" customClass="PhotoAlbumLayout"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U1B-iM-Acl">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ERX-XM-0Va">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -29,10 +24,13 @@
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="Nv9-ag-cx9" id="shb-SU-oU5"/>
-                            <outlet property="delegate" destination="Nv9-ag-cx9" id="O2X-f9-h5z"/>
+                            <outlet property="dataSource" destination="Nv9-ag-cx9" id="XOR-QR-k60"/>
+                            <outlet property="delegate" destination="Nv9-ag-cx9" id="Jan-fT-OMi"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="photoalbumlayout" destination="ZAA-RT-f5W" id="gRv-Gb-kdQ"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixm-OF-GKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,8 +18,8 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
 - (CGRect)frameForAlbumPhotoAtIndexPath:(NSIndexPath *)indexPath;
 //- (CGRect)frameForAlbumTitleAtIndexPath:(NSIndexPath *)indexPath;
 //- (CGRect)frameForEmblem;
-
-- (CATransform3D)transformForAlbumPhotoAtIndex:(NSIndexPath *)indexPath;
+//
+//- (CATransform3D)transformForAlbumPhotoAtIndex:(NSIndexPath *)indexPath;
 
 @end
 
