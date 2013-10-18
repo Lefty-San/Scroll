@@ -44,10 +44,12 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
 }
 
 
-/******* Setup *******/
 -(void)setup {
+    
+// Handle defualt size here
+    
     self.itemInsets = UIEdgeInsetsMake(22.0f, 22.0f, 13.0f, 22.0f);
-    self.itemSize = CGSizeMake(125.0f, 125.0f);
+    self.itemSize = CGSizeMake(50.0f, 50.0f);
     self.interItemSpacingY = 12.0f;
     self.numberOfColumns = 2;
 }
