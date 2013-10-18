@@ -12,6 +12,10 @@
  *  leaving off on step 32
  *
  *  http://www.raywenderlich.com/22324/beginning-uicollectionview-in-ios-6-part-12
+ *  another tutorial with collectionview
+ *
+ *  http://www.mindtreatstudios.com/how-its-made/ios-gesture-recognizer-tips-tricks/
+ *  pangesturerecognizer tip
  *
  */
 
@@ -53,7 +57,6 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     panRecognizer.minimumNumberOfTouches = 1;
     panRecognizer.delegate = self; // Very important
 //    [self addGestureRecognizer:panRecognizer];
-    
 
 }
 
