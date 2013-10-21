@@ -22,6 +22,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="skI-pS-U41" appends="YES" id="6fe-mT-RYG"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -30,11 +33,16 @@
                         </connections>
                     </collectionView>
                     <connections>
+                        <outlet property="bodyCollectionCell" destination="ERX-XM-0Va" id="7E4-N6-P7Y"/>
                         <outlet property="photoalbumlayout" destination="ZAA-RT-f5W" id="gRv-Gb-kdQ"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixm-OF-GKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="skI-pS-U41"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="skI-pS-U41">
+                    <connections>
+                        <outlet property="delegate" destination="ERX-XM-0Va" id="pCP-MR-OAQ"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="-80"/>
         </scene>
