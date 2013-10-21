@@ -34,6 +34,9 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
 
 @implementation ViewController
 
+#define GROW_ANIMATION_DURATION_SECONDS 0.15    // Determines how fast a piece size grows when it is moved.
+#define SHRINK_ANIMATION_DURATION_SECONDS 0.15  // Determines how fast a piece size shrinks when a piece stops moving.
+
 - (void)viewDidLoad {
 
     [super viewDidLoad];
@@ -42,7 +45,7 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
 
     [self.collectionView registerClass:[AlbumPhotoCell class]
             forCellWithReuseIdentifier:PhotoCellIdentifier];
-    [self setupRecognizers];
+//    [self setupRecognizers];
 
 }
 
@@ -52,21 +55,7 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setupRecognizers {
 
-    UIPanGestureRecognizer* panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
-    panRecognizer.minimumNumberOfTouches = 1;
-    panRecognizer.delegate = self; // Very important
-    [panRecognizer addTarget:self.collectionView action:@selector(panGestureRecognizer)];
-    [self.collectionView addGestureRecognizer:panRecognizer];
-
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer {
-
-    NSLog(@"dey be hollerin at me like ay Lil Swipey");
-    return YES; // Also, very important.
-}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 10;
@@ -87,5 +76,49 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     
     return photoCell;
 }
+
+- (void)setupRecognizers {
+    
+    UIPanGestureRecognizer* panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
+    panRecognizer.minimumNumberOfTouches = 1;
+    panRecognizer.delegate = self; // Very important
+    [panRecognizer addTarget:self.collectionView action:@selector(panGestureRecognizer)];
+    [self.collectionView addGestureRecognizer:panRecognizer];
+    
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer {
+    
+    NSLog(@"dey be hollerin at me like ay Lil Swipey");
+    return YES; // Also, very important.
+}
+
+/**
+ Scales up a view slightly which makes the piece slightly larger, as if it is being picked up by the user.
+ */
+-(void)animateFirstTouchAtPoint:(CGPoint)touchPoint forView:(UIImageView *)theView
+{
+	// Pulse the view by scaling up, then move the view to under the finger.
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:GROW_ANIMATION_DURATION_SECONDS];
+	theView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+	[UIView commitAnimations];
+}
+
+
+/**
+ Scales down the view and moves it to the new position.
+ */
+-(void)animateView:(UIView *)theView toPosition:(CGPoint)thePosition
+{
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:SHRINK_ANIMATION_DURATION_SECONDS];
+	// Set the center to the final postion.
+	theView.center = thePosition;
+	// Set the transform back to the identity, thus undoing the previous scaling effect.
+	theView.transform = CGAffineTransformIdentity;
+	[UIView commitAnimations];
+}
+
 
 @end

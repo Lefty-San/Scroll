@@ -38,6 +38,7 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     self = [super init];
     if (self) {
         [self setup];
+        
     }
     
     return self;
@@ -136,5 +137,7 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     
     return CGSizeMake(self.collectionView.bounds.size.width, height);
 }
+
+
 
 @end

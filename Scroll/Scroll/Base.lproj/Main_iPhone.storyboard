@@ -27,7 +27,6 @@
                         <connections>
                             <outlet property="dataSource" destination="Nv9-ag-cx9" id="XOR-QR-k60"/>
                             <outlet property="delegate" destination="Nv9-ag-cx9" id="Jan-fT-OMi"/>
-                            <outletCollection property="gestureRecognizers" destination="skI-pS-U41" appends="YES" id="mdT-u7-aSm"/>
                         </connections>
                     </collectionView>
                     <connections>
