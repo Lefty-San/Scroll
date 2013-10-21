@@ -51,8 +51,8 @@ static NSString * const PhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     
     self.itemInsets = UIEdgeInsetsMake(22.0f, 22.0f, 13.0f, 22.0f);
     self.itemSize = CGSizeMake(50.0f, 50.0f);
-    self.interItemSpacingY = 12.0f;
-    self.numberOfColumns = 2;
+    self.interItemSpacingY = 10.0f;
+    self.numberOfColumns = 1;
 }
 
 -(void) prepareLayout {
